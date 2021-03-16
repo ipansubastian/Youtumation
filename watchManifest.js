@@ -1,9 +1,6 @@
 /* eslint-disable no-eval */
 const fs = require('fs');
-const fse = require('fs-extra');
 const { resolve } = require('path');
-
-const assetDirs = ['icons'];
 
 let msg1 = '';
 let msg2 = '';
@@ -18,9 +15,6 @@ setInterval(() => {
     if (JSON.stringify(json1) !== JSON.stringify(json2) || json2 === undefined) {
       json1 = json2;
       fs.writeFileSync(resolve(distDir, 'manifest.json'), JSON.stringify(json2));
-      assetDirs.forEach((dir) => {
-        fse.copySync(resolve('src', dir), resolve(distDir, dir));
-      });
     }
     msg1 = msg2;
     msg2 = 'Manifest Compiled!';
