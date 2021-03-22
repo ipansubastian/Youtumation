@@ -12,7 +12,7 @@
         <div class="mt-4">
           <h3 class="font-bold">Repositori Proyek:</h3>
           <p class="bg-yellow-100 pl-1 pr-1 pt-2 pb-2 break-words text-left mt-1">
-            <a href="https://github.com/ipansubastian/Youtumation" class="underline">
+            <a class="underline cursor-pointer" @click="createTab({ url: repository })">
               https://github.com/ipansubastian/Youtumation
             </a>
           </p>
@@ -21,11 +21,11 @@
           <h3 class="font-bold">Pengembang:</h3>
           <p>Ipan Subastian</p>
           <div class="grid grid-cols-2 mt-2">
-            <a href="https://github.com/ipansubastian">
-              <img src="../../icons/github_icon.png" class="float-right ml-2" />
+            <a class="cursor-pointer" @click="createTab({ url: authorGHURL })">
+              <img src="../../assets/github_icon.png" class="float-right ml-2" />
             </a>
-            <a href="https://www.facebook.com/outside.jp">
-              <img src="../../icons/facebook_icon.png" class="float-left ml-2" />
+            <a class="cursor-pointer" @click="createTab({ url: authorFBURL })">
+              <img src="../../assets/facebook_icon.png" class="float-left ml-2" />
             </a>
           </div>
         </div>
@@ -37,12 +37,26 @@
 <script>
 import BackButton from './_backButton';
 export default {
+  data() {
+    return {
+      repository: 'https://github.com/ipansubastian/Youtumation',
+      authorGHURL: 'https://github.com/ipansubastian',
+      authorFBURL: 'https://web.facebook.com/outside.jp',
+    };
+  },
   components: {
     BackButton,
   },
   methods: {
     back() {
       this.$parent.currentComponent = 'Main';
+    },
+    createTab(params) {
+      const defaultParams = {
+        // add default params here
+      };
+      params = Object.assign(defaultParams, params);
+      chrome.tabs.create({ active: params.active, url: params.url });
     },
   },
 };

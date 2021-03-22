@@ -11,7 +11,7 @@
     <footer class="pt-1 pb-1 pl-3 pr-3">
       <p class="text-gray-400 text-center">
         Youtumation v1.0.0 by
-        <a href="https://github.com/ipansubastian" class="underline" title="Ipan Subastian | Github">Ipan Subastian</a>
+        <a class="underline cursor-pointer" title="Ipan Subastian | Github" @click="createTab({url: authorGHURL})">Ipan Subastian</a>
       </p>
     </footer>
   </div>
@@ -24,11 +24,21 @@ export default {
   data() {
     return {
       currentComponent: 'Main',
+      authorGHURL: 'https://github.com/ipansubastian',
     };
   },
   components: {
     Main,
     About,
+  },
+  methods: {
+    createTab(params) {
+      const defaultParams = {
+        // add default params here
+      };
+      params = Object.assign(defaultParams, params);
+      chrome.tabs.create({ active: params.active, url: params.url });
+    },
   },
 };
 </script>

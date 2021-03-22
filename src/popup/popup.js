@@ -3,7 +3,6 @@ import './popup.css';
 import 'tailwindcss/tailwind.css';
 import Vue from 'vue';
 import Popup from './Popup.vue';
-import Router from './router';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faSlidersH, faArrowLeft, faInfoCircle, faTachometerAlt } from '@fortawesome/free-solid-svg-icons';
