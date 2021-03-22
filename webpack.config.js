@@ -1,16 +1,19 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const webpack = require('webpack');
 // const CopyPlugin = require('copy')
 
 const autoprefixer = require('autoprefixer');
 
 const { VueLoaderPlugin } = require('vue-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyLoader = require('copy-loader');
+const copyWebpackPlugin = require('copy-webpack-plugin');
 
 const base = {
   entry: {
     content: path.resolve(__dirname, 'src/content/content.js'),
-    option: path.resolve(__dirname, 'src/option/option.js'),
+    options: path.resolve(__dirname, 'src/options/options.js'),
     background: path.resolve(__dirname, 'src/background/background.js'),
     popup: path.resolve(__dirname, 'src/popup/popup.js'),
     // tailwind: path.resolve(__dirname, 'src/blobal/main.css')
@@ -45,6 +48,8 @@ const base = {
             loader: 'file-loader',
             options: {
               esModule: false,
+              name: '/assets/[name].[ext]',
+              outputDirectory: 'build/assets',
             },
           },
         ],
@@ -52,6 +57,9 @@ const base = {
     ],
   },
   resolve: {
+    fallback: {
+      fs: false,
+    },
     // alias: {
     //   styles: []
     // },
@@ -59,6 +67,12 @@ const base = {
     extensions: ['*', '.js', '.vue', '.json', '.css', '.png'],
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('development'),
+    }),
+    new webpack.ProvidePlugin({
+      process: 'process/browser',
+    }),
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       template: './src/popup/template.html',
@@ -66,13 +80,15 @@ const base = {
       filename: 'popup/popup.html',
     }),
     new HtmlWebpackPlugin({
-      template: './src/option/template.html',
-      chunks: ['option'],
-      filename: 'option/option.html',
+      template: './src/options/template.html',
+      chunks: ['options'],
+      filename: 'options/options.html',
     }),
     new MiniCssExtractPlugin({
       filename: '[name]/[name].css',
     }),
+    // new copyWebpackPlugin({ patterns: [{ from: './src/assets', to: './icons' }] }),
+
     // new CopyPlugin([
     //   // { from: './src/manifest.json', to: './manifest.json' },
     //   { from: './src/icons', to: 'icons' },
