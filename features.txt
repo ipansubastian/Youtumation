@@ -1,0 +1,66 @@
+Main Dashboard:
+  Tasks:
+    Task list
+    Add task
+    Remove task
+    Edit task
+  Task History:
+    Task history list
+  Alarms:
+    Alarm list
+    Add alarms
+    Remove alarms
+    Edit alarms
+  Screenshots:
+    Screenshot List
+  History:
+    History List
+  Sounds:
+    Sound list
+    Add Sound
+    Remove Sound
+  Playlist:
+    Playlist
+    Add Playlist:
+      Add playlist from youtube
+      Add new custom playlist
+    Remove Playlist
+    Edit Playlist
+  Youtube elements:
+    Element list
+    Add new element
+    Remove element
+    Edit element
+Preferences:
+  Language:
+    Choose Language:
+      Bahasa Indonesia
+      English
+  Screenshot Settings:
+    Autodownload: Boolean
+    Screenshot Name:
+      video_title-time.png
+      vide_title-counter.png
+      time.png
+      count.png
+      screenshots-time.png
+      screenshots-count.png
+      prefix-time.png
+      prefix-count.png
+  Behavior:
+    Open Link settings:
+      always new tab
+      in new extension tab
+      in current tab
+  Task Settings:
+    Sound notification: boolean
+    Default sound notification: boolean
+    Record history: boolean
+  Alarm Settings:
+    Default sound:
+      sound
+    Add new sound
+  History Settings:
+    History mode: boolean
+
+
