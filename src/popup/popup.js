@@ -1,5 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import './popup.css';
+import './popup.scss';
 import 'tailwindcss/tailwind.css';
 import Vue from 'vue';
 import Popup from './Popup.vue';
@@ -12,8 +12,6 @@ library.add(faSlidersH);
 library.add(faArrowLeft);
 library.add(faInfoCircle);
 library.add(faTachometerAlt);
-
-
 
 Vue.component('fa-icon', FontAwesomeIcon);
 

@@ -42,6 +42,22 @@ const base = {
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
       },
       {
+        test: /\.s[ac]ss$/i,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              sassOptions: {
+                indentWidth: 4,
+              },
+            },
+          },
+        ],
+      },
+      {
         test: /\.(png|jpe?g|gif)$/i,
         use: [
           {
