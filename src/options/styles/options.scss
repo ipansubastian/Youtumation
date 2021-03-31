@@ -1,0 +1,49 @@
+// .vsa-item__trigger:active {
+//   border: 1px solid white;
+//   appearance: none;
+// }
+
+.vsa-list {
+  --vsa-min-width: 0;
+  --vsa-bg-color: transparent;
+  --vsa-default-icon-size: 0.5;
+  --vsa-text-color: white;
+  --vsa-text-color--hover: white;
+  --vsa-highlight-color: rgba(153, 27, 27, 0.5);
+  // --vsa-highlight-color: transparent;
+  // --vsa-heading-padding: none;
+}
+
+.vsa-item__trigger {
+  background-color: rgba(185, 28, 28, 0.5);
+  // color: white;
+}
+
+.vsa-item__trigger {
+  transition: none;
+}
+
+.vsa-item__trigger:hover > .vsa-item__trigger__content span,
+.vsa-item__trigger:focus > .vsa-item__trigger__content span,
+.vsa-item__trigger:hover > .vsa-item__trigger__content svg path,
+.vsa-item__trigger:focus > .vsa-item__trigger__content svg path {
+  transition: none;
+  color: white !important;
+  z-index: 1000;
+}
+
+.vsa-item__trigger:hover > .vsa-item__trigger__icon::after,
+.vsa-item__trigger:hover > .vsa-item__trigger__icon::before,
+.vsa-item__trigger:focus > .vsa-item__trigger__icon::after,
+.vsa-item__trigger:focus > .vsa-item__trigger__icon::before {
+  background-color: white;
+}
+
+.vsa-item__content {
+  background-color: pink;
+  color: black;
+}
+
+// #vsa-item-4:first-child {
+//   height: 73px;
+// }
