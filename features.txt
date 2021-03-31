@@ -4,8 +4,7 @@ Main Dashboard:
     Add task
     Remove task
     Edit task
-  Task History:
-    Task history list
+    Task History
   Alarms:
     Alarm list
     Add alarms
