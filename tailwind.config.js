@@ -8,6 +8,12 @@ module.exports = {
       backgroundImage: theme => ({
         'sidebar-bg': `url(${path.resolve(__dirname, 'src/assets/undraw_youtube_tutorial_2gn3.png')})`,
       }),
+      zIndex: {
+        '-10': '-10',
+      },
+      inset: {
+        '-screen': '-100vw',
+      },
     },
     // colors: {
     //   red: colors.lightBlue,
