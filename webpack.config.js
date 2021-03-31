@@ -83,9 +83,9 @@ const base = {
     extensions: ['*', '.js', '.vue', '.json', '.css', '.png'],
   },
   plugins: [
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('development'),
-    }),
+    // new webpack.DefinePlugin({
+    //   'process.env.NODE_ENV': 'development',
+    // }),
     new webpack.ProvidePlugin({
       process: 'process/browser',
     }),
